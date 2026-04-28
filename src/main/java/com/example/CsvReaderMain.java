@@ -14,11 +14,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Главный класс для чтения данных о сотрудниках из CSV-файла.
+ * Использует библиотеку OpenCSV для парсинга файла с разделителем ';'.
+ */
 public class CsvReaderMain 
 {
 	
-
+	/**
+     * Точка входа в программу.
+     * Загружает данные из CSV-файла и выводит информацию о сотрудниках в консоль.
+     *
+     * @param args аргументы командной строки 
+     */
     public static void main(String[] args) 
     {
         String csvFileName = "foreign_names.csv";
@@ -30,7 +38,16 @@ public class CsvReaderMain
             System.out.println(p);
         }
     }
-
+    /**
+     * Читает данные о сотрудниках из CSV-файла и возвращает список объектов {@link Person}.
+     *
+     *Файл должен находиться в папке {@code src/main/resources}.
+     * Ожидаемый формат CSV (разделитель ';'):
+     * id;name;gender;birthDate;division;salary
+     *
+     * @param csvFileName имя CSV-файла (например: "foreign_names.csv")
+     * @return список сотрудников {@link List} из {@link Person}
+     */
     public static List<Person> readPeopleFromCsv(String csvFileName) 
     {
         List<Person> people = new ArrayList<>();
